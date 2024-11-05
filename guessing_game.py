@@ -26,8 +26,23 @@ def guessing_game():
     """    
     answer = random.randint(0, 10)  # Generate a random number between 0 and 10
 
-    # Complete your code implementation here ... 
-    
+    while True:
+        try:
+            guess = int(input("Enter your guess (between 0 and 10): "))
+            if guess < 0 or guess > 10:
+                print("Please enter a number between 0 and 10.")
+                continue
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
+
+        if guess < answer:
+            print(f"Your guess of {guess} is too low!")
+        elif guess > answer:
+            print(f"Your guess of {guess} is too high!")
+        else:
+            print(f"Right! The answer is {answer}")
+            break
 
 # Test your code:
 guessing_game()
