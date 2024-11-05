@@ -17,10 +17,16 @@ def calculate_average(numbers):
     calculate_average([10, 20, 30, 40, 50])  # Output: 30.0
     """
     
-    # Function implementation here ...
+    if not numbers:
+        return None
 
+    total = 0
+    for number in numbers:
+        total += number
+
+    average = total / len(numbers)
     return average
 
 # # Example usage
-# numbers = [10, 20, 30, 40, 50]
-# print("The average is:", calculate_average(numbers))  # Expected output: The average is: 30.0
+numbers = [34, 70, 45, 88, 134]
+print("The average is:", calculate_average(numbers))  # Expected output: The average is: 30.0
