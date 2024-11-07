@@ -26,9 +26,27 @@ def winning_numbers(user_list, winning_list):
 
     The function also prints a message indicating the prize won.
     """
+    match_count = 0
 
-    # Function implementation here ...
+    for num in user_list:
+        if num in winning_list:
+            match_count += 1
+
+    if match_count == 3:
+        prize = "First"
+    elif match_count == 2:
+        prize = "Second"
+    elif match_count == 1:
+        prize = "Third"
+    else:
+        prize = "No"
 
     # Print the result
     print(f"Congratulations, you won {prize} prize!")
     return prize
+
+# Example usage:
+winning_list = [5, 14, 17]
+user_list = [5, 14, 10]
+result = winning_numbers(user_list, winning_list)
+print(result)
